@@ -21,3 +21,17 @@ macro_rules! vgt {
             }
         }
 }
+
+#[macro_export]
+macro_rules! analog_read! {
+    ($adc:expr, $a0:expr, $a1:expr) => {
+        {
+            let values = [
+                $a0.analog_read(&mut $adc),
+                $a1.analog_read(&mut $adc),
+            ];
+
+            values
+        }
+    }
+}

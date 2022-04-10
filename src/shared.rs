@@ -1,4 +1,7 @@
-// Macros
+/* Macros defined for the uno-revive-rs project
+    Authored by: Ethan Gallucci 
+*/
+
 #![no_std]
 
 #[macro_export]

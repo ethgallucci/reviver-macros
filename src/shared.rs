@@ -21,12 +21,3 @@ macro_rules! vgt {
             }
         }
 }
-
-// Setup a watchdog timer with an 8ms timeout
-#[macro_export]
-macro_rules! watchdog8ms {
-    ($periph:expr) => {
-        let mut watchdog = wdt::Wdt::new($periph.wdt, &periph.CPU.mcusr);
-        watchdog.start(wdt::Timeout::Ms8000).unwrap();
-    }
-}

@@ -4,6 +4,7 @@
 
 #![no_std]
 
+// Reads from ADC channels: Vbandgap, Ground, Temperature
 #[macro_export]
 macro_rules! vgt {
         ($adc:expr, $ser:expr) => {
@@ -19,4 +20,13 @@ macro_rules! vgt {
                 ufmt::uwriteln!(&mut $ser, "Temperature: {}", tmp).void_unwrap();
             }
         }
+}
+
+// Setup a watchdog timer with an 8ms timeout
+#[macro_export]
+macro_rules! watchdog8ms {
+    ($periph:expr) => {
+        let mut watchdog = wdt::Wdt::new($periph.wdt, &periph.CPU.mcusr);
+        watchdog.start(wdt::Timeout::Ms8000).unwrap();
+    }
 }

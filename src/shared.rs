@@ -23,7 +23,7 @@ macro_rules! vgt {
 }
 
 #[macro_export]
-macro_rules! analog_read {
+macro_rules! two_pins_to_arr_analog {
     ($adc:expr, $a0:expr, $a1:expr) => {
         {
             let values = [

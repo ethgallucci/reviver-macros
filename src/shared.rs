@@ -37,7 +37,7 @@ macro_rules! two_pins_to_arr_analog {
 }
 
 #[macro_export]
-macro_rules! two_pins_to_ser_out {
+macro_rules! two_pins_analog_to_ser_out {
     ($ser:expr, $val:expr) => {
         {
             for(i, v) in $val.iter().enumerate() {

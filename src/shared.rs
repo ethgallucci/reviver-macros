@@ -22,6 +22,7 @@ macro_rules! vgt {
         }
 }
 
+/// Analog reads in two pins into an array
 #[macro_export]
 macro_rules! two_pins_to_arr_analog {
     ($adc:expr, $a0:expr, $a1:expr) => {
@@ -36,6 +37,7 @@ macro_rules! two_pins_to_arr_analog {
     }
 }
 
+/// Outputs two pins analog values to serial console
 #[macro_export]
 macro_rules! two_pins_analog_to_ser_out {
     ($ser:expr, $val:expr) => {
